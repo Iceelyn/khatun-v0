@@ -88,6 +88,17 @@ app.post('/api/chat', async (req, res) => {
   }
 })
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log(`Khatun server listening on http://localhost:${PORT}`)
+})
+
+server.on('error', (err) => {
+  if (err.code === 'EADDRINUSE') {
+    console.error(
+      `[Khatun] Port ${PORT} is already in use — another backend is probably still running.\n` +
+        `  → Free it:  lsof -ti:${PORT} | xargs -r kill   (or change PORT in server/.env), then restart.`,
+    )
+    process.exit(1)
+  }
+  throw err
 })

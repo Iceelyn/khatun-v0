@@ -1,0 +1,15 @@
+{
+  "name": "khatun-server",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Khatun backend — the only place that talks to the Anthropic API.",
+  "scripts": {
+    "dev": "node --watch --env-file=.env src/index.js",
+    "start": "node --env-file=.env src/index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  }
+}

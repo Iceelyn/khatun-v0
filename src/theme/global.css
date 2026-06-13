@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --lavender: #8B7FF0;
+  --lavender-deep: #6F61E8;
+  --lavender-soft: #A99DF5;
+  --lavender-tint: #EDEAFB;
+  --card: #ffffff;
+  --text-dark: #2B2350;
+  --text-muted: #6B6486;
+  --shadow: rgba(79, 63, 168, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--lavender);
+  color: #fff;
+  overscroll-behavior: none;
+}
+
+/* Mobile-first phone frame centered on larger screens */
+#root {
+  display: flex;
+  justify-content: center;
+  background: #ddd6f7;
+}
+
+.app-shell {
+  width: 100%;
+  max-width: 440px;
+  min-height: 100vh;
+  background: var(--lavender);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.35s ease both;
+}
+
+@keyframes pulseDots {
+  0%, 80%, 100% { opacity: 0.3; transform: scale(0.8); }
+  40% { opacity: 1; transform: scale(1); }
+}
